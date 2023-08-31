@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href= "{% static 'css/style.css' %}">
+    <title>Formulaire</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">S'inscrire</a>
+        <a href="#">Détails</a>
+        <a href="#">Contact</a>
+    </div>
+        <section>
+            <div class="container">
+                <form method="post" class="form">
+                    <h2>Formulaire d'incrition à la formation</h2>
+                        <div class="inputBox">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit">S'inscrire</button>
+                        </div>
+                </form>
+            </div>
+          </section>
+</body>
+</html>
